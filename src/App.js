@@ -7,6 +7,8 @@ import Internship from './pages/sc';
 import Sb from './pages/sb';
 import HolidayManagement from './pages/Holiday Management';
 import Attendancemanagement from './pages/Attendancemanagement'
+import Interview from './pages/Interview';
+import Courses from './pages/Courses';
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
         <Route path="/sb" element={<Sb />} />
         <Route path="/holidaymanagement" element={<HolidayManagement />} />
         <Route path="/attendancemanagement" element={<Attendancemanagement />} />
+        <Route path="/interviews" element={<Interview/>} />
+        <Route path='/Courses' element={<Courses/>}/>
       </Routes>
     </BrowserRouter>
     <Footer />
