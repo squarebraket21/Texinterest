@@ -13,9 +13,9 @@ function Navbar() {
         <div className="container-fluid px-5">
           
           {/* Logo */}
-          <a className="navbar-brand d-flex align-items-center" href="#">
+          <Link className="navbar-brand d-flex align-items-center" to="/">
             <img src={logo} alt="Logo" width={"190"} className="me-2 mb-0" />
-          </a>
+          </Link> {/* ✅ fixed closing */}
 
           {/* Hamburger toggle button */}
           <button
@@ -42,22 +42,37 @@ function Navbar() {
               <li className="nav-item">
                 <Link className="nav-link fw-semibold" to="/sc">Internship</Link>
               </li>
+
+              {/* ✅ FIXED Courses dropdown */}
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle  fw-semibold" href="#" role="button">
-                  Courses<ChevronDown size={16} />
-                </a>
+                <button
+                  className="nav-link dropdown-toggle btn btn-link fw-semibold"
+                  data-bs-toggle="dropdown"
+                >
+                  Courses <ChevronDown size={16} />
+                </button>
                 <ul className="dropdown-menu">
-                  <li><Link className="dropdown-item" to="/sb">Course 1</Link></li>
-                  <li><Link className="dropdown-item" to="/sc">Course 2</Link></li>
+                  <li><Link className="dropdown-item" to="/Courses">All Courses</Link></li>
+                 
                 </ul>
               </li>
+
+              {/* Interviews */}
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle fw-semibold" href="#" role="button" >
-                  Interviews<ChevronDown size={16} />
-                </a>
+                <button
+                  className="nav-link dropdown-toggle btn btn-link fw-semibold"
+                  data-bs-toggle="dropdown"
+                >
+                  Interviews <ChevronDown size={16} />
+                </button>
+
                 <ul className="dropdown-menu">
-                  <li><Link className="dropdown-item" to="/sc">Interview 1</Link></li>
-                  <li><Link className="dropdown-item" to="/sb">Interview 2</Link></li>
+                  <li>
+                    <Link className="dropdown-item" to="/interviews">All Interviews</Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/interviews">Programming</Link>
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -72,10 +87,10 @@ function Navbar() {
               {/* Divider */}
               <div className="vr mx-2"></div>
 
-              {/* Sign in */}
-              <a className="nav-link d-flex align-items-center fw-semibold" href="#">
+              {/* ✅ FIXED Sign in */}
+              <Link className="nav-link d-flex align-items-center fw-semibold" to="/login">
                 <LogIn size={18} className="me-1" /> Sign in
-              </a>
+              </Link>
             </div>
           </div>
         </div>
